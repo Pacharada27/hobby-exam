@@ -705,125 +705,13 @@ h3 {
     to { opacity: 1; }
 }
 
-@keyframes slideInFromLeft {
-    from { opacity: 0; transform: translateX(-30px); }
-    to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes slideInFromRight {
-    from { opacity: 0; transform: translateX(30px); }
-    to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes slideInFromTop {
-    from { opacity: 0; transform: translateY(-30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideInFromBottom {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Page transition animations */
-.page-transition {
-    animation: pageFadeIn 0.6s ease-in-out;
+/* Page fade animation */
+.page-fade {
+    animation: pageFadeIn 0.8s ease-in-out;
 }
 
 .fade-in {
     animation: fadeIn 0.6s ease forwards;
-}
-
-.slide-in-left {
-    animation: slideInFromLeft 0.8s ease forwards;
-}
-
-.slide-in-right {
-    animation: slideInFromRight 0.8s ease forwards;
-}
-
-.slide-in-top {
-    animation: slideInFromTop 0.8s ease forwards;
-}
-
-.slide-in-bottom {
-    animation: slideInFromBottom 0.8s ease forwards;
-}
-
-/* Staggered animations for multiple elements */
-.stagger-animation > * {
-    opacity: 0;
-    animation: fadeIn 0.6s ease forwards;
-}
-
-.stagger-animation > *:nth-child(1) { animation-delay: 0.1s; }
-.stagger-animation > *:nth-child(2) { animation-delay: 0.2s; }
-.stagger-animation > *:nth-child(3) { animation-delay: 0.3s; }
-.stagger-animation > *:nth-child(4) { animation-delay: 0.4s; }
-.stagger-animation > *:nth-child(5) { animation-delay: 0.5s; }
-.stagger-animation > *:nth-child(6) { animation-delay: 0.6s; }
-
-/* Page content animations on load */
-main {
-    animation: slideInFromBottom 0.8s ease-out;
-}
-
-.card {
-    animation: slideInFromTop 0.8s ease-out;
-    animation-fill-mode: both;
-}
-
-.card:nth-child(1) { animation-delay: 0.1s; }
-.card:nth-child(2) { animation-delay: 0.2s; }
-.card:nth-child(3) { animation-delay: 0.3s; }
-.card:nth-child(4) { animation-delay: 0.4s; }
-.card:nth-child(5) { animation-delay: 0.5s; }
-.card:nth-child(6) { animation-delay: 0.6s; }
-
-/* Navigation animation */
-nav {
-    animation: slideInFromTop 0.6s ease-out;
-}
-
-/* Header animation */
-header {
-    animation: slideInFromTop 0.8s ease-out;
-}
-
-/* Footer animation */
-footer {
-    animation: slideInFromBottom 0.6s ease-out;
-    animation-delay: 0.3s;
-    animation-fill-mode: both;
-}
-
-/* Smooth transitions for all interactive elements */
-a, button, .btn, input, textarea, select {
-    transition: all 0.3s ease;
-}
-
-/* Enhanced hover animations */
-.card:hover {
-    animation: none; /* Disable animation on hover to prevent conflicts */
-    transform: translateY(-6px);
-    box-shadow: 0 12px 28px rgba(94,53,177,0.4);
-}
-
-/* Loading state animation */
-.loading {
-    opacity: 0.6;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-}
-
-/* Page exit animation (for future use with JavaScript) */
-.page-exit {
-    animation: pageFadeOut 0.4s ease-in forwards;
-}
-
-@keyframes pageFadeOut {
-    from { opacity: 1; }
-    to { opacity: 0; }
 }
 
 /* ===== PRINT STYLES ===== */
