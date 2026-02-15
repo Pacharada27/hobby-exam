@@ -73,7 +73,7 @@ body {
 
 /* ===== HEADER ===== */
 header {
-    background: url("img7.jpg") center/cover no-repeat;
+    background: url("/img7.jpg") center/cover no-repeat;
     color: white;
     padding: 2.5em 0;
     text-align: center;
