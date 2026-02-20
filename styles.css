@@ -539,6 +539,121 @@ input:valid, textarea:valid {
     margin: 30px 0;
 }
 
+/* ===== GAME INSTRUCTIONS ===== */
+.game-instructions {
+    background: #F3E5F5;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.game-instructions h3 {
+    color: #7E57C2;
+    margin-bottom: 10px;
+}
+
+.game-instructions ul {
+    padding-left: 20px;
+}
+
+.game-instructions li {
+    margin-bottom: 6px;
+    color: #555;
+}
+
+/* ===== GAME BANNER (floating emojis) ===== */
+.game-banner {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 0 10px;
+    flex-wrap: wrap;
+}
+
+.float-emoji {
+    font-size: 2em;
+    display: inline-block;
+    animation: floatEmoji 3s ease-in-out infinite;
+}
+
+@keyframes floatEmoji {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-18px) rotate(10deg); }
+}
+
+/* ===== TIC-TAC-TOE GAME ===== */
+.ttt-area {
+    text-align: center;
+}
+
+.ttt-status {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #5E35B1;
+    margin-bottom: 20px;
+    padding: 12px;
+    background: #EDE7F6;
+    border-radius: 10px;
+}
+
+.ttt-stats {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.ttt-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 300px;
+    margin: 0 auto 20px;
+}
+
+.ttt-cell {
+    aspect-ratio: 1;
+    background: #F3E5F5;
+    border: 3px solid #B39DDB;
+    border-radius: 12px;
+    font-size: 2.2em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ttt-cell:hover:not(:disabled) {
+    background: #D1C4E9;
+    transform: scale(1.05);
+}
+
+.ttt-cell:disabled {
+    cursor: default;
+}
+
+.ttt-cell.x {
+    color: #7E57C2;
+}
+
+.ttt-cell.o {
+    color: #E91E63;
+}
+
+.ttt-cell.winner {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    border-color: #FFD700;
+    animation: winPulse 0.6s ease infinite alternate;
+}
+
+@keyframes winPulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.08); }
+}
+
 /* ===== FOOTER ===== */
 footer {
     background: #7E57C2;

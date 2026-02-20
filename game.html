@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Play Memory Match Game - Test your memory with this fun interactive card matching game">
-    <meta name="keywords" content="memory game, card matching, brain game, puzzle, interactive game">
+    <meta name="description" content="Play Games - Memory Match and Number Guessing games">
+    <meta name="keywords" content="memory game, number guessing, brain game, puzzle, interactive game">
     <meta name="author" content="Pacharada">
-    <title>Memory Match Game - Pacharada's Hobby Website</title>
+    <title>Games - Pacharada's Hobby Website</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,8 +27,8 @@
 <div class="main">
 
 <header role="banner">
-    <h1>Memory Match Game</h1>
-    <p>Test your memory and concentration with this fun card matching game!</p>
+    <h1>🎮 Game Zone</h1>
+    <p>Challenge your brain with fun interactive games!</p>
 </header>
 
 <nav role="navigation" aria-label="Main navigation">
@@ -40,8 +40,22 @@
 </nav>
 
 <main id="main-content" role="main">
+
+    <!-- Floating Animation Banner -->
+    <div class="game-banner" aria-hidden="true">
+        <span class="float-emoji" style="animation-delay:0s">🎮</span>
+        <span class="float-emoji" style="animation-delay:0.4s">🃏</span>
+        <span class="float-emoji" style="animation-delay:0.8s">🧠</span>
+        <span class="float-emoji" style="animation-delay:1.2s">🎯</span>
+        <span class="float-emoji" style="animation-delay:1.6s">⭐</span>
+        <span class="float-emoji" style="animation-delay:2s">🏆</span>
+        <span class="float-emoji" style="animation-delay:2.4s">🎲</span>
+        <span class="float-emoji" style="animation-delay:2.8s">✨</span>
+    </div>
+
+    <!-- Game 1: Memory Match -->
     <section aria-labelledby="game-heading">
-        <h2 id="game-heading">Memory Match Challenge</h2>
+        <h2 id="game-heading">🃏 Memory Match Challenge</h2>
         
         <div class="game-container">
             <div class="game-header">
@@ -76,30 +90,53 @@
                     <li>Click on any card to flip it and reveal the symbol</li>
                     <li>Try to find matching pairs of cards</li>
                     <li>Match all pairs to win the game!</li>
-                    <li>Use keyboard: Space to start, R to reset, Enter/Space to flip cards</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <section aria-labelledby="features-heading">
-        <h2 id="features-heading">Game Features</h2>
-        
-        <div class="hobby-grid">
-            <article class="card">
-                <h3>🧠 Brain Training</h3>
-                <p>Improve your memory and concentration with this classic matching game. Perfect for exercising your mind!</p>
-            </article>
-            
-            <article class="card">
-                <h3>⏱️ Track Your Progress</h3>
-                <p>Monitor your moves and time to challenge yourself. Try to complete the game with fewer moves and faster time!</p>
-            </article>
-            
-            <article class="card">
-                <h3>♿ Accessible Design</h3>
-                <p>Fully keyboard accessible with screen reader support. Everyone can enjoy this memory challenge!</p>
-            </article>
+    <!-- Game 2: Tic-Tac-Toe -->
+    <section aria-labelledby="ttt-heading">
+        <h2 id="ttt-heading">❌⭕ Tic-Tac-Toe</h2>
+
+        <div class="game-container">
+            <div class="ttt-area">
+                <div class="ttt-status" id="ttt-status" aria-live="polite">Press "New Game" to start!</div>
+
+                <div class="ttt-stats">
+                    <div class="stat-item">❌ X Wins: <span id="ttt-x-wins">0</span></div>
+                    <div class="stat-item">⭕ O Wins: <span id="ttt-o-wins">0</span></div>
+                    <div class="stat-item">🤝 Draws: <span id="ttt-draws">0</span></div>
+                </div>
+
+                <div class="ttt-board" id="ttt-board" role="grid" aria-label="Tic-Tac-Toe board">
+                    <button class="ttt-cell" data-index="0" aria-label="Cell 1"></button>
+                    <button class="ttt-cell" data-index="1" aria-label="Cell 2"></button>
+                    <button class="ttt-cell" data-index="2" aria-label="Cell 3"></button>
+                    <button class="ttt-cell" data-index="3" aria-label="Cell 4"></button>
+                    <button class="ttt-cell" data-index="4" aria-label="Cell 5"></button>
+                    <button class="ttt-cell" data-index="5" aria-label="Cell 6"></button>
+                    <button class="ttt-cell" data-index="6" aria-label="Cell 7"></button>
+                    <button class="ttt-cell" data-index="7" aria-label="Cell 8"></button>
+                    <button class="ttt-cell" data-index="8" aria-label="Cell 9"></button>
+                </div>
+
+                <div class="game-controls" style="margin-top:20px;">
+                    <button class="btn" onclick="tttGame.newGame()">New Game</button>
+                    <button class="btn" onclick="tttGame.resetScore()">Reset Score</button>
+                </div>
+            </div>
+
+            <div class="game-instructions">
+                <h3>How to Play</h3>
+                <ul>
+                    <li>Player X always goes first</li>
+                    <li>Click any empty cell to place your mark</li>
+                    <li>Get 3 in a row (horizontal, vertical, or diagonal) to win!</li>
+                    <li>If all 9 cells are filled with no winner, it's a draw</li>
+                    <li>Play against a friend — take turns on the same device!</li>
+                </ul>
+            </div>
         </div>
     </section>
 
@@ -110,37 +147,41 @@
             <table>
                 <thead>
                     <tr>
+                        <th scope="col">Game</th>
                         <th scope="col">Strategy</th>
-                        <th scope="col">Description</th>
                         <th scope="col">Difficulty</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Pattern Recognition</td>
-                        <td>Look for patterns in card positions and movements</td>
+                        <td>Memory Match</td>
+                        <td>Remember card positions before flipping</td>
                         <td>Beginner</td>
                     </tr>
                     <tr>
-                        <td>Memory Palace</td>
+                        <td>Memory Match</td>
                         <td>Create mental associations with card locations</td>
                         <td>Intermediate</td>
                     </tr>
                     <tr>
-                        <td>Speed Focus</td>
-                        <td>Try to remember cards quickly before they flip back</td>
+                        <td>Number Guessing</td>
+                        <td>Use binary search — always guess the middle number</td>
+                        <td>Beginner</td>
+                    </tr>
+                    <tr>
+                        <td>Number Guessing</td>
+                        <td>Track eliminated ranges to narrow down quickly</td>
                         <td>Advanced</td>
                     </tr>
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan="3">Practice regularly to improve your memory skills!</td>
+                        <td colspan="3">Practice regularly to sharpen your brain!</td>
                     </tr>
                 </tfoot>
             </table>
         </div>
     </section>
-
 
 </main>
 
@@ -152,6 +193,7 @@
 </div>
 
 <script src="game.js"></script>
+<script src="tictactoe.js"></script>
 
 </body>
 </html>
